@@ -56,4 +56,6 @@ timbow <- function(start.color = "#FF0000",
       geom_raster() +
       theme(legend.position="None")
   }
+  
+  return(color.ls)
 }
