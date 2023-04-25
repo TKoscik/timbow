@@ -1,0 +1,10 @@
+Package: timbow
+Type: Package
+Title: Generate Rainbow HEX Colors with a Perceptual Luminosity Gradient
+Version: 1.0.0
+Author: Timothy R. Koscik [aut, cre, cph]
+Maintainer: Timothy Koscik <timkoscik@gmail.com>
+Depends: R (>= 3.5.0)
+Description: Uses HSLuv color specifications to generate color gradients that begin with a desired hue and vary in colorfulness and luminosity along the desired gradient. Hence, rainbows translate more directly to grayscale gradients for non-color printing (in theory).
+License: MIT + file LICENSE
+Encoding: UTF-8
