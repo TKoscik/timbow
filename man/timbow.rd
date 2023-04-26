@@ -15,6 +15,7 @@ timbow(start.color = "#FF0000",
        n.cycles = 5/6,
        plot.continuous = TRUE,
        plot.discrete = TRUE)
+}
 \arguments{
   \item{start.color}{HEX color to initialize rainbow}
   \item{hue.direction}{increasing or decreasing (akin to direction of change in wavelength, wraps at edges) }
@@ -24,4 +25,14 @@ timbow(start.color = "#FF0000",
   \item{n.cycles}{number of times to cycle through the rainbow, default is 0.8333, which goes through all of the colors without cycling back to the beginning}
   \item{plot.continuous}{show plot of continuous colors, requires ggplot2}
   \item{plot.discrete}{show a plot of a continuous color gradient, requires ggplot2}
+}
+\details{}
+\value{A vector of HEX colors}
+\author{
+Timothy R. Koscik <timkoscik@gmail.com>
+}
+\examples{
+\dontrun{
+color.ls <- timbow()
+}
 }
