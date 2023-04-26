@@ -1,8 +1,8 @@
-timbow <- function(start.color = "#FF0000",
+timbow <- function(n.colors = 6,
+                   start.color = "#FF0000",
                    hue.direction = c("increasing", "decreasing"),
                    colorfulness = 100,
                    luminosity.limits = c(15, 85),
-                   n.colors = 6, 
                    n.cycles = 5/6,
                    plot.continuous = TRUE,
                    plot.discrete = TRUE) {
