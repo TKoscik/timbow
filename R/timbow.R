@@ -39,6 +39,7 @@ timbow <- function(n.colors = 6,
   }
   
   if (show.plot) {
+    print("plot")
     require(ggplot2)
     pf <- data.frame(
       x=rep(seq(1,n.colors, length.out=200),2),
