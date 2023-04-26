@@ -4,7 +4,7 @@ timbow <- function(n.colors = 6,
                    colorfulness = 100,
                    luminosity.limits = c(15, 85),
                    n.cycles = 5/6,
-                   palette = NULL,
+                   palette = "custom",
                    show.plot = TRUE) {
 
   require(RcppColors)
