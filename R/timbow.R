@@ -4,9 +4,40 @@ timbow <- function(n.colors = 6,
                    colorfulness = 100,
                    luminosity.limits = c(15, 85),
                    n.cycles = 5/6,
+                   palette = c("plasma", "hot", "cold", "cubehel-esque", "virid-esque"),
                    show.plot = TRUE) {
 
   require(RcppColors)
+  
+  palette.ls <- c("plasma", "hot", "cold", "cubehel-esque", "virid-esque")
+  if (palette %in% palette.ls) {
+    if (palette == "plasma") {
+      start.hue="#0000FF"
+      hue.direction = "increasing"
+      n.cycles = 1/2
+    }    
+    if (palette == "virid-esque") {
+      start.hue="#0000FF"
+      hue.direction = "decreasing"
+      n.cycles = 1/2
+    }
+    if (palette == "hot") {
+      start.hue=0
+      n.cycles=1/6
+      hue.direction = "increasing"
+    }
+    if (palette == "cold") {
+      start.hue="#0000FF"
+      n.cycles=1/6
+      hue.direction = "decreasing"
+    }
+    if (palette == "cubehel-esque") {
+      if (n.colors < 12) { n.colors=12 }
+      start.hue="#0000FF"
+      n.cycles=11/6
+      luminosity.limits = c(15,100)
+    }
+  }
   
   # calculate HUE ------------------------------------------------------------------
   if (is.numeric(start.hue)) {
