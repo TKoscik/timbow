@@ -11,7 +11,7 @@ timbow <- function(n.colors = 6,
   # calculate HUE ------------------------------------------------------------------
   if (is.numeric(start.hue)) {
     start.hue <- start.hue %% 360
-  } else 
+  } else {
     start.hue <- round(rgb2hsv(col2rgb(start.hue))*360)
   }
   hue <- switch(hue.direction[1],
