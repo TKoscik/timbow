@@ -4,7 +4,7 @@ timbow <- function(n.colors = 6,
                    colorfulness = 100,
                    luminosity.limits = c(15, 85),
                    n.cycles = 5/6,
-                   palette = c("plasma", "hot", "cold", "cubehel-esque", "virid-esque"),
+                   palette = NULL,
                    show.plot = TRUE) {
 
   require(RcppColors)
@@ -69,7 +69,6 @@ timbow <- function(n.colors = 6,
     color.ls[i] <- RcppColors::hsluv(h=hue[i], s=saturation[i], l=luminosity[i])
   }
   
-  ##why is the commit not working, this line should be here
   if (show.plot) {
     require(ggplot2)
     pf <- data.frame(
