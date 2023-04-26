@@ -37,7 +37,7 @@ timbow <- function(n.colors = 6,
   for (i in 1:n.colors) {
     color.ls[i] <- RcppColors::hsluv(h=hue[i], s=saturation[i], l=luminosity[i])
   }
-  
+  print(show.plot)
   if (show.plot) {
     print("plot")
     require(ggplot2)
