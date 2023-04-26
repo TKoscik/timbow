@@ -37,9 +37,9 @@ timbow <- function(n.colors = 6,
   for (i in 1:n.colors) {
     color.ls[i] <- RcppColors::hsluv(h=hue[i], s=saturation[i], l=luminosity[i])
   }
-  print(show.plot)
+  
+  ##why is the commit not working, this line should be here
   if (show.plot) {
-    print("plot")
     require(ggplot2)
     pf <- data.frame(
       x=rep(seq(1,n.colors, length.out=200),2),
