@@ -36,25 +36,25 @@ timbow <- function(start.color = "#FF0000",
   }
   
   if (plot.discrete) {
-    library(ggplot2)
+    require(ggplot2)
     pf <- data.frame(x=1:n.colors, y=1, values=1:n.colors)
-    ggplot(pf, aes(x=x, y=y, fill=values)) +
+    print(ggplot(pf, aes(x=x, y=y, fill=values)) +
       theme_void() +
       coord_equal() +
       scale_fill_gradientn(colors=color.ls) +
       geom_raster() +
-      theme(legend.position="None")
+      theme(legend.position="None"))
   }
   if (plot.continuous) {
-    library(ggplot2)
+    require(ggplot2)
     cpal <- colorRampPalette(color.ls)(200)
     pf <- data.frame(x=1:200, y=1, values=1:200)
-    ggplot(pf, aes(x=x, y=y, fill=values)) +
+    print(ggplot(pf, aes(x=x, y=y, fill=values)) +
       theme_void() +
       coord_equal(ratio=20) +
       scale_fill_gradientn(colors=color.ls) +
       geom_raster() +
-      theme(legend.position="None")
+      theme(legend.position="None"))
   }
   
   return(color.ls)
