@@ -40,11 +40,12 @@ timbow <- function(n.colors = 6,
   
   if (show.plot) {
     require(ggplot2)
-    pf <- data.frame(x=rep(seq(1,n.colors, length.out=200),2),
-                     y=rep(1,200*2),
-                     values=c(ceiling(seq(1/200,n.colors, length.out=200)),
-                              seq(1,n.colors, length.out=200)),
-                     type=c(rep("Discrete",200),rep("Continuous",200)))
+    pf <- data.frame(
+      x=rep(seq(1,n.colors, length.out=200),2),
+      y=rep(1,200*2),
+      values=c(ceiling(seq(1/200,n.colors, length.out=200)),
+               seq(1,n.colors, length.out=200)),
+      type=c(rep("Discrete",200),rep("Continuous",200)))
     ggplot(pf, aes(x=x, y=y, fill=values)) +
       theme_void() +
       scale_fill_gradientn(colors=color.ls) +
@@ -52,6 +53,5 @@ timbow <- function(n.colors = 6,
       geom_raster() +
       theme(legend.position="None")
   }
-  
   return(color.ls)
 }
