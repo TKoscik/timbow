@@ -46,12 +46,12 @@ timbow <- function(n.colors = 6,
       values=c(ceiling(seq(1/200,n.colors, length.out=200)),
                seq(1,n.colors, length.out=200)),
       type=c(rep("Discrete",200),rep("Continuous",200)))
-    ggplot(pf, aes(x=x, y=y, fill=values)) +
+    print(ggplot(pf, aes(x=x, y=y, fill=values)) +
       theme_void() +
       scale_fill_gradientn(colors=color.ls) +
       facet_grid(type ~., scales = "free") +
       geom_raster() +
-      theme(legend.position="None")
+      theme(legend.position="None"))
   }
   return(color.ls)
 }
