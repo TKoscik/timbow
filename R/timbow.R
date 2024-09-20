@@ -5,7 +5,8 @@ timbow <- function(n.colors = 6,
                    luminosity.limits = c(15, 85),
                    n.cycles = 5/6,
                    palette = "custom",
-                   show.plot = TRUE) {
+                   show.plot = FALSE,
+                   colormap = FALSE) {
 
   require(RcppColors)
   
@@ -83,6 +84,16 @@ timbow <- function(n.colors = 6,
       facet_grid(type ~., scales = "free") +
       geom_raster() +
       theme(legend.position="None"))
+  }
+
+  if (colormap) {
+    require(ggplot2)
+    pf <- data.frame(x=1, y=seq(1,n.colors+1,1), values=seq(1,n.colors+1,1))
+    ggplot(pf, aes(x=x, y=y, fill=values)) +
+      theme_void() + 
+      scale_fill_gradientn(colors=c("#000000", color.ls)) +
+      geom_raster() +
+      theme(legend.position="None", plot.margin = margin(t=0, r=0, b=0, l=0))
   }
   return(color.ls)
 }
