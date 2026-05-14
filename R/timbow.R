@@ -7,8 +7,6 @@ timbow <- function(n.colors = 6,
                    palette = "custom",
                    show.plot = FALSE,
                    colormap = FALSE) {
-
-  require(RcppColors)
   
   palette.ls <- c("plasma", "hot", "cold", "cubehel-esque", "virid-esque")
   if (palette %in% palette.ls) {
@@ -67,7 +65,8 @@ timbow <- function(n.colors = 6,
   # generate HEX colors -----------------------------------------------------------
   color.ls <- character(n.colors)
   for (i in 1:n.colors) {
-    color.ls[i] <- RcppColors::hsluv(h=hue[i], s=saturation[i], l=luminosity[i])
+    #color.ls[i] <- RcppColors::hsluv(h=hue[i], s=saturation[i], l=luminosity[i])
+    color.ls[i] <- hcl(h=hue[i], s=saturation[i], l=luminosity[i])
   }
   
   if (show.plot) {
