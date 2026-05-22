@@ -7,7 +7,7 @@ timbow <- function(n.colors = 6,
                    palette = "custom",
                    show.plot = FALSE,
                    colormap = FALSE) {
-  requires(RcppColors)
+  require(RcppColors)
   
   palette.ls <- c("plasma", "hot", "cold", "cubehel-esque", "virid-esque")
   if (palette %in% palette.ls) {
